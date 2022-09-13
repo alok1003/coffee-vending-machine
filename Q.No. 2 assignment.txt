@@ -1,0 +1,105 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int ordercode , quantity;
+    char yesno;
+    string  order , icon;
+    int money = 0 , pay , change;
+
+    icon [1] = 16;
+
+    // do
+    {
+        cout << "\n \n Welcome to coffee machine :" << icon[1];
+        cout << "\n \n \n Menu :";
+        cout << " \n \n 1. Espresso with Milk - 60 rupees \n 2. Espresso with Cream - 75 rupees \n 3. Espresso with Latte - 100 rupees";
+        cout << " \n 4. Cappuccino with Milk - 80 rupees \n 5. Cappuccino with Cream - 90 rupees \n 6. Cappuccino with Latte - 125 rupees";
+        cout << "\n 7. Latte with Milk - 100 rupees \n 8. Latte with Cream - 120 rupees \n 9. Latte with Latte - 150 rupees";
+        
+        cout << "\n "<< icon[1] << "\n Choose your order (1-9): ";
+        cin >> ordercode;
+        
+        cout << "\n "<< icon[1] <<  "Please Enter your Quantity: ";
+        cin >> quantity;
+        
+        switch (ordercode)
+        {
+            case 1:
+            order = "Espresso with Milk";
+            money = quantity * 60 ;
+            break;
+            
+            case 2:
+            order = "Espresso with Cream";
+            money = quantity * 75 ;
+            break;
+            
+            case 3:
+            order = "Espresso with Latte";
+            money = quantity * 100 ;
+            break;
+            
+            case 4:
+            order = "Cappuccino with Milk";
+            money = quantity * 80 ;
+            break;
+            
+            case 5:
+            order = "Cappuccino with Cream";
+            money = quantity * 90 ;
+            break;
+            
+            case 6:
+            order = "Cappuccino with Latte";
+            money = quantity * 125 ;
+            break;
+            
+            case 7:
+            order = "Latte with Milk";
+            money = quantity * 100 ;
+            break;
+            
+            case 8:
+            order = "Latte with Cream";
+            money = quantity * 125 ;
+            break;
+            
+            case 9:
+            order = "Latte with Latte";
+            money = quantity * 150 ;
+            break;
+            
+            default:
+            cout << " ivalid option , please try again";
+            break;
+        }
+    
+        cout << "\n"<< icon[1] << " Pay your money: ";
+        cin >> pay ;
+        
+    if (pay < money )
+    {
+        cout << "\n  Sorry , you do not have enough money to proceed this transction . ";
+        cout << " \n   we have returned you " << pay <<"rupees";
+    }
+    else 
+    {
+        cout << "\n \n Your order:  ";
+        cout << quantity << "pcs - " << order <<endl ;
+        
+        cout << " Total amount:  " << money << "rupees \n ";
+        
+        change << money - pay ;
+        cout<< "To return :  " << change << " rupees\n ";
+    }
+    cout << "\n\n" << icon[1] <<" Do you want to order again? (y/n): ";
+    cin >> yesno;
+    
+    }
+    while (yesno == 'y' || yesno == 'Y');
+    
+    cout << "\n\n Thank you for your purchase , Hope you visit again ";
+}
+// This is contributed by Alok kr Sharma.
